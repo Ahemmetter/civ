@@ -43,8 +43,8 @@ class Civ(a.Window):
 		# self.zoom = zoom_levels[2]
 
 		# import the map
-		map_name = "world.tmx"
-		tile_layer_name = "Terrain"
+		map_name = "/Users/nitrox/Code/civ/assets/world.tmx"
+		tile_layer_name = "Tile Layer 1"
 		my_map = a.read_tiled_map(map_name, tile_scale)
 		map_array = my_map.layers_int_data[tile_layer_name]
 		self.end_of_map = len(map_array[0]) * grid_size - grid_size
@@ -71,6 +71,12 @@ class Civ(a.Window):
 		if key in [a.key.LEFT, a.key.RIGHT, a.key.UP, a.key.DOWN, a.key.A, a.key.D, a.key.W, a.key.S]:
 			self.dx = 0
 			self.dy = 0
+
+	# def on_mouse_press(self, x, y, button, key_modifiers):
+		"""
+        # Called when the user presses a mouse button.
+		"""
+		# pass
 
 	def update(self, delta_time):
 		"""Moves the map"""
